@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Characters } from "./pages/Characters";
-import { CharacterDetails } from "./pages/CharacterDetails";
-import { ErrorPage } from "./pages/ErrorPage";
-import { VehicleDetails } from "./pages/VehicleDetails";
-import { HomeworldDetails } from "./pages/PlanetDetails";
-import { Vehicles } from "./pages/Vehicles";
-
-import classes from "./App.module.scss";
 import { LinkedEntities } from "./components/LinkedEntities/LinkedEntities";
+import { Characters } from "./pages/Characters";
+import { ErrorPage } from "./pages/ErrorPage";
+import { Vehicles } from "./pages/Vehicles";
 import { Planets } from "./pages/Planets";
+import { CharacterDetails } from "./pages/CharacterDetails";
+import { VehicleDetails } from "./pages/VehicleDetails";
+import { HomeworldDetails } from "./pages/HomeworldDetails";
+import classes from "./App.module.scss";
 
 export function App() {
   return (

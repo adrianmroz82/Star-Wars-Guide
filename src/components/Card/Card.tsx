@@ -7,7 +7,8 @@ import { Path } from "../../models/path.model";
 
 import classes from "./Card.module.scss";
 
-type EntityType = Pick<Character | Vehicle | Homeworld, "name" | "url">;
+// type EntityType = Pick<Character | Vehicle | Homeworld, "name" | "url">;
+type EntityType = Character | Vehicle | Homeworld;
 
 interface Props {
   data: EntityType;

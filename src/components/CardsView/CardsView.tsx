@@ -7,7 +7,8 @@ import { Card } from "../Card/Card";
 
 import classes from "./CardsView.module.scss";
 
-type Entity = Pick<Character | Vehicle | Homeworld, "name" | "url">;
+// type Entity = Pick<Character | Vehicle | Homeworld, "name" | "url">;
+type Entity = Character | Vehicle | Homeworld;
 
 interface Props {
   data: Entity[];

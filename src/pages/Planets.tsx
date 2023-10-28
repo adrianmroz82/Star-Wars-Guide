@@ -1,12 +1,8 @@
-import { useQuery } from "react-query";
 import { fetchFirstTenPlanets } from "../api/api";
-import { CardsView } from "../components/CardsView/CardsView";
+
+import { GenericPage } from "../components/GenericPage/GenericPage";
+import { Homeworld } from "../models/homeworld.model";
 
 export function Planets() {
-  const { data: planets, isLoading, error } = useQuery("planets", fetchFirstTenPlanets, {});
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error:</div>;
-
-  return <CardsView data={planets!} path="planets" />;
+  return <GenericPage<Homeworld[]> queryKey="planets" fetchFunction={fetchFirstTenPlanets} path="planets" />;
 }

@@ -26,12 +26,18 @@ import { Character } from "../models/character.model";
 //   return allCharacters;
 // };
 
-export const fetchFirstTenCharacters = () => {
-  return axios.get(`${SWAPI_BASE_URL}/people`);
+// export const fetchFirstTenCharacters = () => {
+//   return axios.get(`${SWAPI_BASE_URL}/people`);
+// };
+
+export const fetchFirstTenCharacters = async () => {
+  const response = await axios.get(`${SWAPI_BASE_URL}/people`);
+  return response.data.results as Character[];
 };
 
-export const fetchCharacter = (id: string) => {
-  return axios.get(`${SWAPI_BASE_URL}/people/${parseInt(id) + 1}`);
+export const fetchCharacter = async (id: string) => {
+  const response = await axios.get(`${SWAPI_BASE_URL}/people/${parseInt(id)}`);
+  return response.data as Character;
 };
 
 // export const fetchConnectedVehicles = (vehicleUrls: string[]) => {
