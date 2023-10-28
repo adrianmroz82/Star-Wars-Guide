@@ -1,12 +1,13 @@
 import { useLocation, useParams } from "react-router-dom";
-import { fetchVehicle } from "../api/api";
+import { fetchConnectedCharacters, fetchVehicle } from "../api/api";
 import { useQuery } from "react-query";
 import { Spinner } from "../components/Spinner/Spinner";
 import { ErrorPage } from "./ErrorPage";
 import { EntityInfo } from "../components/EntityInfo/EntityInfo";
 import { Path } from "../models/path.model";
-import { ConnectedEntityPeople } from "../components/ConnectedEntity/ConnectedEntityPeople";
 import { extractPathParam } from "../utils/extractPathParam";
+import { ConnectedEntityQuery } from "../components/ConnectedEntity/ConnectedEntityQuery";
+import { Character } from "../models/character.model";
 
 export function VehicleDetails() {
   const { id } = useParams();
@@ -31,7 +32,14 @@ export function VehicleDetails() {
             marginTop: "20px",
             gap: "20px",
           }}>
-          {vehicle!.pilots!.length > 0 && <ConnectedEntityPeople urls={vehicle!.pilots!} />}
+          {vehicle!.pilots!.length > 0 && (
+            <ConnectedEntityQuery<Character[]>
+              urls={vehicle!.pilots!}
+              fetchFunction={fetchConnectedCharacters as () => Promise<Character[]>}
+              path="people"
+              entityName="Characters"
+            />
+          )}
         </div>
       </div>
     </div>

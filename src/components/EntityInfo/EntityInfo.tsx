@@ -2,7 +2,7 @@ import { Character } from "../../models/character.model";
 import { Homeworld } from "../../models/homeworld.model";
 import { Path } from "../../models/path.model";
 import { Vehicle } from "../../models/vehicle.model";
-import { EntityAsset } from "../CharacterAsset/CharacterAsset";
+import { EntityAsset } from "../EntityAsset/EntityAsset";
 
 import classes from "./EntityInfo.module.scss";
 

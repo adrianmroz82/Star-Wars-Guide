@@ -1,10 +1,11 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { fetchHomeworld } from "../api/api";
+import { fetchConnectedCharacters, fetchHomeworld } from "../api/api";
 import { Spinner } from "../components/Spinner/Spinner";
 import { ErrorPage } from "./ErrorPage";
 import { EntityInfo } from "../components/EntityInfo/EntityInfo";
-import { ConnectedEntityPeople } from "../components/ConnectedEntity/ConnectedEntityPeople";
+import { ConnectedEntityQuery } from "../components/ConnectedEntity/ConnectedEntityQuery";
+import { Character } from "../models/character.model";
 
 export function HomeworldDetails() {
   const { id } = useParams();
@@ -17,7 +18,6 @@ export function HomeworldDetails() {
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div style={{ width: "1000px" }}>
         <EntityInfo entity={homeworld!} index={Number(id)} path="planets" />
-        {homeworld?.name}
         <div
           style={{
             display: "flex",
@@ -25,7 +25,14 @@ export function HomeworldDetails() {
             marginTop: "20px",
             gap: "20px",
           }}>
-          {homeworld!.residents!.length > 0 && <ConnectedEntityPeople urls={homeworld!.residents!} />}
+          {homeworld!.residents!.length > 0 && (
+            <ConnectedEntityQuery<Character[]>
+              urls={homeworld!.residents}
+              fetchFunction={fetchConnectedCharacters as () => Promise<Character[]>}
+              path="people"
+              entityName="Characters"
+            />
+          )}
         </div>
       </div>
     </div>

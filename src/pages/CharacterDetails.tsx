@@ -1,14 +1,15 @@
 import { useLocation, useParams } from "react-router-dom";
-import { fetchCharacter } from "../api/api";
+import { fetchCharacter, fetchConnectedHomeworld, fetchConnectedVehicles } from "../api/api";
 import { useQuery } from "react-query";
 import { Character } from "../models/character.model";
 import { EntityInfo } from "../components/EntityInfo/EntityInfo";
 import { Spinner } from "../components/Spinner/Spinner";
 import { ErrorPage } from "./ErrorPage";
-import { ConnectedEntityHomeland } from "../components/ConnectedEntity/ConnectedEntityHomeworld";
-import { ConnectedEntityVehicles } from "../components/ConnectedEntity/ConnectedEntityVehicles";
 import { Path } from "../models/path.model";
 import { extractPathParam } from "../utils/extractPathParam";
+import { ConnectedEntityQuery } from "../components/ConnectedEntity/ConnectedEntityQuery";
+import { Vehicle } from "../models/vehicle.model";
+import { Homeworld } from "../models/homeworld.model";
 
 export function CharacterDetails() {
   const { id } = useParams();
@@ -33,8 +34,22 @@ export function CharacterDetails() {
             marginTop: "20px",
             gap: "20px",
           }}>
-          {character.homeworld && <ConnectedEntityHomeland url={character.homeworld} />}
-          {character.vehicles.length > 0 && <ConnectedEntityVehicles urls={character.vehicles} />}
+          {character.homeworld && (
+            <ConnectedEntityQuery<Homeworld>
+              urls={character.homeworld}
+              fetchFunction={fetchConnectedHomeworld as () => Promise<Homeworld>}
+              path="planets"
+              entityName="Planets"
+            />
+          )}
+          {character.vehicles.length > 0 && (
+            <ConnectedEntityQuery<Vehicle[]>
+              urls={character.vehicles}
+              fetchFunction={fetchConnectedVehicles as () => Promise<Vehicle[]>}
+              path="vehicles"
+              entityName="Vehicles"
+            />
+          )}
         </div>
       </div>
     </div>
