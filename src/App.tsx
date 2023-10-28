@@ -8,6 +8,7 @@ import { Vehicles } from "./pages/Vehicles";
 
 import classes from "./App.module.scss";
 import { LinkedEntities } from "./components/LinkedEntities/LinkedEntities";
+import { Planets } from "./pages/Planets";
 
 export function App() {
   return (
@@ -19,6 +20,7 @@ export function App() {
           <Route path="/people/:id" element={<CharacterDetails />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/vehicles/:id" element={<VehicleDetails />} />
+          <Route path="/planets" element={<Planets />} />
           <Route path="/planets/:id" element={<HomeworldDetails />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
