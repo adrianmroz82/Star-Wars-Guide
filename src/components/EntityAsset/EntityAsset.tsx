@@ -10,6 +10,7 @@ interface Props {
 export const EntityAsset = ({ index, path }: Props) => {
   return (
     <div
+      data-testid="entity-asset"
       className={classes.entityAsset}
       style={{
         backgroundImage: `url(${`../../../${path}/${index}.jpg`})`,
