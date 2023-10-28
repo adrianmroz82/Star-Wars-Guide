@@ -1,24 +1,20 @@
 import { Link } from "react-router-dom";
 import { Spinner } from "../Spinner/Spinner";
-
-import classes from "./ConnectedEntity.module.scss";
 import { Homeworld } from "../../models/homeworld.model";
 import { Vehicle } from "../../models/vehicle.model";
 import { Character } from "../../models/character.model";
 import { extractRouteId } from "../../utils/extractRouteId";
 
-interface Entity {
-  name: string;
-}
+import classes from "./ConnectedEntity.module.scss";
 
-interface Props<T> {
+interface Props {
   data: Homeworld | Vehicle[] | Character[];
   isLoading: boolean;
   path: string;
   entityName: string;
 }
 
-export function ConnectedEntity<T extends Entity>({ data, isLoading, path, entityName }: Props<T>) {
+export function ConnectedEntity({ data, isLoading, path, entityName }: Props) {
   if (isLoading) return <Spinner />;
 
   const entityData = Array.isArray(data) ? data : [data];

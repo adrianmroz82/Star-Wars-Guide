@@ -1,5 +1,7 @@
 import { Path } from "../../models/path.model";
 
+import classes from "./EntityAsset.module.scss";
+
 interface Props {
   index?: number;
   path?: Path;
@@ -8,13 +10,9 @@ interface Props {
 export const EntityAsset = ({ index, path }: Props) => {
   return (
     <div
+      className={classes.entityAsset}
       style={{
-        flex: "2",
-        height: "100%",
         backgroundImage: `url(${`../../../${path}/${index}.jpg`})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
       }}
     />
   );

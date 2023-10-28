@@ -2,8 +2,6 @@ import { useQuery } from "react-query";
 import { fetchFirstTenPlanets } from "../api/api";
 import { CardsView } from "../components/CardsView/CardsView";
 
-//TODO: ID SHOULD COME FROM URL PARAMS
-
 export function Planets() {
   const { data: planets, isLoading, error } = useQuery("planets", fetchFirstTenPlanets, {});
 

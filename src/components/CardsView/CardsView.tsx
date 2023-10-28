@@ -5,6 +5,8 @@ import { Vehicle } from "../../models/vehicle.model";
 import { extractRouteId } from "../../utils/extractRouteId";
 import { Card } from "../Card/Card";
 
+import classes from "./CardsView.module.scss";
+
 type Entity = Pick<Character | Vehicle | Homeworld, "name" | "url">;
 
 interface Props {
@@ -16,15 +18,8 @@ export const CardsView = ({ data, path }: Props) => {
   const id = extractRouteId(data);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexFlow: "row wrap",
-        width: "80%",
-        border: "1px solid green",
-        margin: "0 auto",
-      }}>
-      <h1 style={{ color: "#FFF" }}>Star Wars Characters</h1>
+    <div className={classes.cardsView}>
+      <h1>Star Wars Characters</h1>
       <ul>
         {data.map((el, index) => (
           <Card path={path} key={index} data={el} index={id[index]} />

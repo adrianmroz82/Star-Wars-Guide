@@ -1,4 +1,3 @@
-// Usage for ConnectedHomeland component with Homeworld type
 import { useQuery } from "react-query";
 import { fetchConnectedHomeworld } from "../../api/api";
 import { Homeworld } from "../../models/homeworld.model";
@@ -14,13 +13,5 @@ export const ConnectedEntityHomeland = ({ url }: Props) => {
 
   console.log(homeworld);
 
-  return (
-    <ConnectedEntity
-      data={homeworld as Homeworld}
-      isLoading={isLoading}
-      path={path}
-      entityName="Homeworld"
-      // generateLink=
-    />
-  );
+  return <ConnectedEntity data={homeworld as Homeworld} isLoading={isLoading} path={path} entityName="Homeworld" />;
 };

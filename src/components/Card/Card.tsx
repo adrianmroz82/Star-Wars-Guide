@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-import { EntityAsset } from "../CharacterAsset/CharacterAsset";
+import { EntityAsset } from "../EntityAsset/EntityAsset";
 import { Character } from "../../models/character.model";
 import { Vehicle } from "../../models/vehicle.model";
 import { Homeworld } from "../../models/homeworld.model";
 import { Path } from "../../models/path.model";
+
+import classes from "./Card.module.scss";
 
 type EntityType = Pick<Character | Vehicle | Homeworld, "name" | "url">;
 
@@ -17,38 +19,12 @@ export function Card({ data, index, path }: Props) {
   const entityData = Array.isArray(data) ? data : [data];
 
   return (
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "inline-block",
-        width: "20%",
-        margin: "20px 0",
-      }}
-      to={`/${path}/${index}`}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          height: "350px",
-          width: "90%",
-          justifyContent: "center",
-          backgroundColor: "#FFF",
-        }}>
-        <div
-          style={{
-            height: "90%",
-            width: "100%",
-            backgroundColor: "gray",
-            color: "#000",
-          }}>
+    <Link to={`/${path}/${index}`} className={classes.card}>
+      <div className={classes.cardContainer}>
+        <div className={classes.imageContainer}>
           <EntityAsset path={path} index={index} />
         </div>
-        <div
-          style={{
-            color: "gray",
-            fontSize: "16px",
-          }}>
+        <div className={classes.textContainer}>
           {entityData.map((item) => (
             <h2 key={item.name}>{item.name}</h2>
           ))}
