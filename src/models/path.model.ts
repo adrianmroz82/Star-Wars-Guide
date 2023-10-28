@@ -1,9 +1,3 @@
 // todo: adjust types
 
-export type Path =
-  | "vehicles"
-  | "starships"
-  | "people"
-  | "planets"
-  | "films"
-  | "species";
+export type Path = "vehicles" | "people" | "planets";

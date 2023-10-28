@@ -1,0 +1,25 @@
+.characterInfoWrapper {
+  display: flex;
+  background: #fff;
+  border-radius: 4px;
+  height: 300px;
+}
+
+.characterAsset {
+  /* Add styles for CharacterAsset component if needed */
+}
+
+.characterInfoDetails {
+  flex: 5;
+  padding: 32px;
+
+  .characterName {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .characterDescription {
+    font-weight: 500;
+    color: grey;
+  }
+}
