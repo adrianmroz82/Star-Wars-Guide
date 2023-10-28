@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
-import { CharacterAsset } from "../CharacterAsset/CharacterAsset";
+import { EntityAsset } from "../CharacterAsset/CharacterAsset";
 import { Character } from "../../models/character.model";
+import { Vehicle } from "../../models/vehicle.model";
+import { Homeworld } from "../../models/homeworld.model";
+import { Path } from "../../models/path.model";
+
+type EntityType = Pick<Character | Vehicle | Homeworld, "name" | "url">;
 
 interface Props {
-  character: Character;
+  data: EntityType;
   index: number;
+  path: Path;
 }
 
-export function Card({ character, index }: Props) {
+export function Card({ data, index, path }: Props) {
+  const entityData = Array.isArray(data) ? data : [data];
+
   return (
     <Link
       style={{
@@ -16,7 +24,7 @@ export function Card({ character, index }: Props) {
         width: "20%",
         margin: "20px 0",
       }}
-      to={`/character/${index}`}>
+      to={`/${path}/${index}`}>
       <div
         style={{
           display: "flex",
@@ -34,13 +42,16 @@ export function Card({ character, index }: Props) {
             backgroundColor: "gray",
             color: "#000",
           }}>
-          <CharacterAsset />
+          <EntityAsset path={path} index={index} />
         </div>
         <div
           style={{
             color: "gray",
+            fontSize: "16px",
           }}>
-          <h2>{character.name}</h2>
+          {entityData.map((item) => (
+            <h2 key={item.name}>{item.name}</h2>
+          ))}
         </div>
       </div>
     </Link>

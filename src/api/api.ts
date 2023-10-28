@@ -2,6 +2,7 @@ import axios from "axios";
 import { SWAPI_BASE_URL } from "./shared";
 import { Vehicle } from "../models/vehicle.model";
 import { Homeworld } from "../models/homeworld.model";
+import { Character } from "../models/character.model";
 
 // todo: sort a-z
 // note: final version of fetching all characters
@@ -72,9 +73,14 @@ export const fetchHomeworld = async (homeworldId: string) => {
 export const fetchFirstTenVehicles = async () => {
   const response = await axios.get(`${SWAPI_BASE_URL}/vehicles`);
   return response.data.results as Vehicle[];
-}
+};
 
 export const fetchFirstTenPlanets = async () => {
   const response = await axios.get(`${SWAPI_BASE_URL}/planets`);
   return response.data.results as Homeworld[];
-}
+};
+
+export const fetchConnectedCharacters = async (characterUrls: string[]) => {
+  const responseArray = await Promise.all(characterUrls.map((url) => axios.get(url)));
+  return responseArray.map((response) => response.data) as Character[];
+};
