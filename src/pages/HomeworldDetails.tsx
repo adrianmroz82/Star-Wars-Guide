@@ -24,7 +24,7 @@ export function HomeworldDetails() {
     <ConnectedEntityQuery<Character[]>
       urls={homeworld!.residents}
       fetchFunction={fetchConnectedCharacters as () => Promise<Character[]>}
-      path={path as Path}
+      path="people"
       entityName="Characters"
     />
   );

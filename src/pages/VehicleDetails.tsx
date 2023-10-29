@@ -13,7 +13,9 @@ export function VehicleDetails() {
   const { id } = useParams();
   const location = useLocation();
 
-  const { data: vehicle, isLoading, error } = useQuery(["homeworld", id], () => fetchVehicle(id!), {});
+  const { data: vehicle, isLoading, error } = useQuery(["vehicles", id], () => fetchVehicle(id!), {});
+
+  console.log("vehicle", vehicle);
 
   if (isLoading) return <Spinner />;
   if (error) return <ErrorPage />;
@@ -24,7 +26,7 @@ export function VehicleDetails() {
     <ConnectedEntityQuery<Character[]>
       urls={vehicle!.pilots}
       fetchFunction={fetchConnectedCharacters as () => Promise<Character[]>}
-      path={path as Path}
+      path="people"
       entityName="Characters"
     />
   );
