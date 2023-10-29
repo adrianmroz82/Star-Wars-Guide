@@ -17,7 +17,7 @@ interface Props {
 
 const EntityDetails = ({ id, entity, entityContent, path }: Props) => {
   return (
-    <div className={classes.container}>
+    <div className={classes.container} data-testid="entity-details">
       <div className={classes.content}>
         <EntityInfo entity={entity!} index={Number(id)} path={path as Path} />
         <div className={classes.entityInfo}>{entityContent}</div>

@@ -19,7 +19,7 @@ export const CardsView = ({ data, path }: Props) => {
   const id = extractRouteId(data);
 
   return (
-    <div className={classes.cardsView}>
+    <div className={classes.cardsView} data-testid="cardsView">
       <h1>Star Wars Characters</h1>
       <ul>
         {data.map((el, index) => (

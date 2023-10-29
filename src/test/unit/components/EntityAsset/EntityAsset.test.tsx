@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import { EntityAsset } from "../../../components/EntityAsset/EntityAsset";
-import { Path } from "../../../models/path.model";
+import { EntityAsset } from "../../../../components/EntityAsset/EntityAsset";
+import { Path } from "../../../../models/path.model";
 
 describe("EntityAsset Component", () => {
   it("should render with index and path", () => {
