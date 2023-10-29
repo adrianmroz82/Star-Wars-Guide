@@ -7,7 +7,7 @@ jest.mock("react-router-dom", () => ({
   Link: ({ to, children }: { to: string; children: React.ReactNode }) => <a href={to}>{children}</a>,
 }));
 
-describe("CardsView Component", () => {
+describe("CardsView", () => {
   it("should render a single CardsView component", () => {
     //given
     const entity = [
@@ -39,7 +39,7 @@ describe("CardsView Component", () => {
 
     // then
     expect(cards).toHaveLength(entity.length);
-    
+
     entity.forEach((entity, index) => {
       const card = cards[index];
       expect(card).toHaveTextContent(entity.name);

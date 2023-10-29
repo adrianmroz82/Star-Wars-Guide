@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { EntityInfo } from "../../../../components/EntityInfo/EntityInfo";
 
-describe("EntityInfo Component", () => {
+describe("EntityInfo", () => {
   it("should render a character entity information", () => {
     // given
     const character = {

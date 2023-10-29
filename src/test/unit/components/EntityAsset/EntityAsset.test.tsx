@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { EntityAsset } from "../../../../components/EntityAsset/EntityAsset";
 import { Path } from "../../../../models/path.model";
 
-describe("EntityAsset Component", () => {
+describe("EntityAsset", () => {
   it("should render with index and path", () => {
     // given
     const index = 1;
