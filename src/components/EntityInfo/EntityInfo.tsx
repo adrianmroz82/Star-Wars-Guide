@@ -37,8 +37,8 @@ export const EntityInfo = ({ entity, index, path }: Props) => {
           )}
           {path === "vehicles" && (
             <>
-              <p>Vehicle Property 1: {(entity as EntityByPath["vehicles"]).name}</p>
-              <p>Vehicle Property 2: {(entity as EntityByPath["vehicles"]).model}</p>
+              <p>Name: {(entity as EntityByPath["vehicles"]).name}</p>
+              <p>Model: {(entity as EntityByPath["vehicles"]).model}</p>
             </>
           )}
           {path === "planets" && (

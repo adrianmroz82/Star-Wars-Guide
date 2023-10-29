@@ -5,6 +5,10 @@
   height: 180px;
   background-color: #fff;
 
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
+
   > .headerSection {
     display: flex;
     justify-content: center;
@@ -21,6 +25,10 @@
   display: flex;
   justify-content: center;
   height: 60%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   > .entityContainer {
     width: 100%;

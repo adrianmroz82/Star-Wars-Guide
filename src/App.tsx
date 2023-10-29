@@ -6,11 +6,20 @@ import classes from "./App.module.scss";
 
 export function App() {
   return (
-    <div className={classes.container}>
-      <Router>
-        <LinkedEntities />
-        <AppRouter />
-      </Router>
-    </div>
+    <>
+      <header className={classes.header}>
+        <h1>Star Wars Characters</h1>
+      </header>
+      <div className={classes.container}>
+        <Router>
+          <div className={classes.sidebar}>
+            <LinkedEntities />
+          </div>
+          <div className={classes.content}>
+            <AppRouter />
+          </div>
+        </Router>
+      </div>
+    </>
   );
 }

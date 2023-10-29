@@ -1,11 +1,7 @@
 .cardsView {
   display: flex;
-  flex-flow: row wrap;
-  width: 80%;
-  border: 1px solid green;
-  margin: 0 auto;
-
-  h1 {
-    color: #fff;
-  }
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }

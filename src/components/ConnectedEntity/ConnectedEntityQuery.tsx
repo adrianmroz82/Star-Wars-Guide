@@ -9,7 +9,6 @@ type Urls = string | string[];
 interface Props<T> {
   urls: Urls;
   fetchFunction: (urls: string | string[]) => Promise<T>;
-
   path: Path;
   entityName: string;
 }

@@ -1,17 +1,14 @@
 .card {
   text-decoration: none;
-  display: inline-block;
-  width: 20%;
-  margin: 20px 0;
 
   .cardContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 350px;
-    width: 90%;
+    width: 280px;
+    padding: 10px;
     justify-content: center;
-    background-color: #fff;
 
     .imageContainer {
       height: 90%;
@@ -23,10 +20,6 @@
     .textContainer {
       color: gray;
       font-size: 16px;
-
-      h2 {
-        font-size: 16px;
-      }
     }
   }
 }

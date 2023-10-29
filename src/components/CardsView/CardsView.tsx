@@ -7,7 +7,6 @@ import { Card } from "../Card/Card";
 
 import classes from "./CardsView.module.scss";
 
-// type Entity = Pick<Character | Vehicle | Homeworld, "name" | "url">;
 type Entity = Character | Vehicle | Homeworld;
 
 interface Props {
@@ -20,12 +19,9 @@ export const CardsView = ({ data, path }: Props) => {
 
   return (
     <div className={classes.cardsView} data-testid="cardsView">
-      <h1>Star Wars Characters</h1>
-      <ul>
-        {data.map((el, index) => (
-          <Card path={path} key={index} data={el} index={id[index]} />
-        ))}
-      </ul>
+      {data.map((el, index) => (
+        <Card path={path} key={index} data={el} index={id[index]} />
+      ))}
     </div>
   );
 };
