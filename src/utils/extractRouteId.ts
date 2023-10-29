@@ -1,4 +1,3 @@
-// TODO : FIX TYPE
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function extractRouteId(data: any | any[]) {
   if (Array.isArray(data)) {

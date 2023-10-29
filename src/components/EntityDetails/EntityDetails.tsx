@@ -1,12 +1,8 @@
 import { EntityInfo } from "../EntityInfo/EntityInfo";
 import { Path } from "../../models/path.model";
-import { Character } from "../../models/character.model";
-import { Vehicle } from "../../models/vehicle.model";
-import { Homeworld } from "../../models/homeworld.model";
 
 import classes from "./EntityDetails.module.scss";
-
-type Entity = Character | Vehicle | Homeworld;
+import { Entity } from "../../models/entity.model";
 
 interface Props {
   id: string;

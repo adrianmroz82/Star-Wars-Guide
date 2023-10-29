@@ -1,13 +1,9 @@
 import { useQuery } from "react-query";
 import { CardsView } from "../CardsView/CardsView";
 import { Path } from "../../models/path.model";
-import { Character } from "../../models/character.model";
-import { Vehicle } from "../../models/vehicle.model";
-import { Homeworld } from "../../models/homeworld.model";
 import { Spinner } from "../Spinner/Spinner";
 import { ErrorPage } from "../../pages/ErrorPage";
-
-type Entity = Character | Vehicle | Homeworld;
+import { Entity } from "../../models/entity.model";
 
 interface Props<T> {
   queryKey: string;

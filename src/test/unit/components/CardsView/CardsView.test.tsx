@@ -31,7 +31,6 @@ describe("CardsView", () => {
       { name: "Darth Vader", url: "vader-url" },
     ];
 
-    
     // when
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { getAllByTestId } = render(<Card data={entity as any} index={1} path="people" />);

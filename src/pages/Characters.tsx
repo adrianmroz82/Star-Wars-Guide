@@ -1,7 +1,7 @@
 import { Character } from "../models/character.model";
-import { fetchFirstTenCharacters } from "../api/api";
 import { GenericPage } from "../components/GenericPage/GenericPage";
+import { fetchCharacters } from "../api/character.api";
 
 export function Characters() {
-  return <GenericPage<Character[]> queryKey="characters" fetchFunction={fetchFirstTenCharacters} path="people" />;
+  return <GenericPage<Character[]> queryKey="characters" fetchFunction={fetchCharacters} path="people" />;
 }

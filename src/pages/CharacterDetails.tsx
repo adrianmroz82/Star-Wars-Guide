@@ -2,13 +2,15 @@ import { useLocation, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { ConnectedEntityQuery } from "../components/ConnectedEntity/ConnectedEntityQuery";
 import EntityDetails from "../components/EntityDetails/EntityDetails";
-import { fetchCharacter, fetchConnectedHomeworld, fetchConnectedVehicles } from "../api/api";
 import { Path } from "../models/path.model";
 import { extractPathParam } from "../utils/extractPathParam";
 import { Spinner } from "../components/Spinner/Spinner";
 import { ErrorPage } from "./ErrorPage";
 import { Homeworld } from "../models/homeworld.model";
 import { Vehicle } from "../models/vehicle.model";
+import { fetchCharacter } from "../api/character.api";
+import { fetchConnectedHomeworld } from "../api/homeworld.api";
+import { fetchConnectedVehicles } from "../api/vehicle.api";
 
 export function CharacterDetails() {
   const { id } = useParams();

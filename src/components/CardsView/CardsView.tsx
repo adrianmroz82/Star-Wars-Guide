@@ -1,13 +1,9 @@
-import { Character } from "../../models/character.model";
-import { Homeworld } from "../../models/homeworld.model";
+import { Entity } from "../../models/entity.model";
 import { Path } from "../../models/path.model";
-import { Vehicle } from "../../models/vehicle.model";
 import { extractRouteId } from "../../utils/extractRouteId";
 import { Card } from "../Card/Card";
 
 import classes from "./CardsView.module.scss";
-
-type Entity = Character | Vehicle | Homeworld;
 
 interface Props {
   data: Entity[];
