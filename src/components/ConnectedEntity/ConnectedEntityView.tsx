@@ -21,17 +21,14 @@ export function ConnectedEntityView({ data, isLoading, path, entityName }: Props
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.headerSection}>
-        <p>Connected {entityName}</p>
-        <hr />
-      </div>
-      <div className={classes.vehicleList}>
+      <p className={classes.headerSection}>Connected {entityName}</p>
+      <hr />
+      <div className={classes.entitiesList}>
         {entityData.map((item) => (
-          <div key={item.name} className={classes.vehicleContainer}>
-            <div className={classes.vehicleAvatar} />
-            <div className={classes.vehicleName} key={item.name}>
-              <Link to={`/${path}/${extractRouteId(item)}`}>{item.name}</Link>
-            </div>
+          <div key={item.name} className={classes.entityContainer}>
+            <Link key={item.name} className={classes.entityName} to={`/${path}/${extractRouteId(item)}`}>
+              {item.name}
+            </Link>
           </div>
         ))}
       </div>
