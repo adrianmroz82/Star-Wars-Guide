@@ -32,3 +32,10 @@ export const fetchConnectedCharacters = async (characterUrls: string[]) => {
   const responseArray = await Promise.all(characterUrls.map((url) => axios.get(url)));
   return responseArray.map((response) => response.data) as Character[];
 };
+
+// pagination
+
+export const fetchCharactersByPage = async (page: number) => {
+  const response = await httpService.get(`/people/?page=${page}`);
+  return response.data as Character[];
+};
