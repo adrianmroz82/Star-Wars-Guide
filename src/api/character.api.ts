@@ -23,7 +23,15 @@ export const fetchConnectedCharacters = async (characterUrls: string[]) => {
   return responseArray.map((response) => response.data) as Character[];
 };
 
-export const fetchCharactersByPage = async (page: number) => {
+export const fetchCharactersByPage = async (
+  page: number
+): Promise<{
+  results: Character[];
+  next: string | null;
+  previous: string | null;
+  count: number;
+}> => {
   const response = await httpService.get(`/people/?page=${page}`);
-  return response.data as Character[];
+  const { results, next, previous, count } = response.data;
+  return { results, next, previous, count };
 };
