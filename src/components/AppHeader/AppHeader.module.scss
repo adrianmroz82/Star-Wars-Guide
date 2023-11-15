@@ -7,15 +7,15 @@
 
 .headerContainer {
   text-align: center;
-}
 
-.header {
-  font-size: 5rem;
-  color: rgb(255, 213, 0);
-  font-family: Starjhol;
-}
+  h1 {
+    font-size: 5rem;
+    color: rgb(255, 213, 0);
+    font-family: Starjhol;
+  }
 
-.subHeader {
-  font-size: 2rem;
-  font-family: Starjhol;
+  h3 {
+    font-size: 2rem;
+    font-family: Starjhol;
+  }
 }
