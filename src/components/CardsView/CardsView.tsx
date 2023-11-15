@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { Entity } from "../../models/entity.model";
 import { Path } from "../../models/path.model";
 import { extractRouteId } from "../../utils/extractRouteId";
@@ -6,22 +7,31 @@ import { Pagination } from "../Pagination/Pagination";
 
 import classes from "./CardsView.module.scss";
 
-interface Props {
-  data: Entity[];
-  path: Path;
+interface PropsX {
+  results: Entity[];
+  next: string | null;
+  previous: string | null;
+  count: number;
 }
 
-export const CardsView = ({ data, path }: Props) => {
-  const id = extractRouteId(data);
+interface Props {
+  data: PropsX;
+  path: Path;
+  page: number;
+  setPage: Dispatch<SetStateAction<number>>;
+}
+
+export const CardsView = ({ data, path, page, setPage }: Props) => {
+  const id = extractRouteId(data.results);
 
   return (
-    <div>
-      <Pagination />
+    <>
+      <Pagination data={data} page={page} setPage={setPage} />
       <div className={classes.cardsView} data-testid="cardsView">
-        {data.map((el, index) => (
+        {data.results.map((el, index) => (
           <Card path={path} key={index} data={el} index={id[index]} />
         ))}
       </div>
-    </div>
+    </>
   );
 };

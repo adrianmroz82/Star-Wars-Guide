@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
+import { Dispatch } from "react";
 import { Entity } from "../../models/entity.model";
-import { fetchCharactersByPage } from "../../api/character.api";
-import { useQuery } from "react-query";
 
 import classes from "./Pagination.module.scss";
 
@@ -13,23 +11,13 @@ interface ResultType {
 }
 
 interface Props {
-  results: ResultType;
-  isLoading: boolean;
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  setResults: React.Dispatch<React.SetStateAction<ResultType>>;
+  data: ResultType;
+  page: number;
+  setPage: Dispatch<React.SetStateAction<number>>;
 }
 
-export function Pagination({ results, setResults, setIsLoading }: Props) {
-  const [page, setPage] = useState(1);
-  const { data, isLoading } = useQuery(["characters", page], () => fetchCharactersByPage(page), {});
-
-  useEffect(() => {
-    if (!isLoading) {
-      setResults(data!);
-    }
-  }, [data, isLoading, setIsLoading, setResults]);
-
-  const totalPages = Math.ceil(results.count / results.results.length);
+export function Pagination({ data, page, setPage }: Props) {
+  const totalPages = Math.ceil(data.count / data.results.length);
 
   const handlePageChange = async (page: number) => {
     setPage(page);
@@ -41,7 +29,7 @@ export function Pagination({ results, setResults, setIsLoading }: Props) {
         style={page === 0 ? { display: "none" } : { display: "block" }}
         className={classes.button}
         onClick={() => handlePageChange(page - 1)}
-        disabled={!results.previous}>
+        disabled={!data.previous}>
         Prev
       </button>
       <span>
