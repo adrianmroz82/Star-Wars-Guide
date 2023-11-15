@@ -1,7 +1,6 @@
 @font-face {
-  font-family: Starjedi;
-  src: url(../../assets/fonts/Starjedi.ttf);
-  src: url(../../assets/fonts/Starjhol.ttf) format("ttf");
+  font-family: Starjhol;
+  src: url(../../assets/fonts/Starjhol.ttf);
   font-weight: normal;
   font-style: normal;
 }
@@ -11,7 +10,12 @@
 }
 
 .header {
-  // font-size: 45px;
-  color: yellow;
-  font-family: Starjedi;
+  font-size: 5rem;
+  color: rgb(255, 213, 0);
+  font-family: Starjhol;
+}
+
+.subHeader {
+  font-size: 2rem;
+  font-family: Starjhol;
 }
