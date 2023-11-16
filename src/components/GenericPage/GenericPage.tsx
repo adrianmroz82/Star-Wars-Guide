@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { CardsView } from "../CardsView/CardsView";
-import { Path } from "../../models/path.model";
+import { Path, ResponseResult } from "../../models/shared.model";
 import { Spinner } from "../Spinner/Spinner";
 import { ErrorPage } from "../../pages/ErrorPage";
-import { Entity } from "../../models/entity.model";
-
-interface PropsX {
-  results: Entity[];
-  next: string | null;
-  previous: string | null;
-  count: number;
-}
 
 interface Props<T> {
   queryKey: string;
@@ -19,7 +11,7 @@ interface Props<T> {
   path: Path;
 }
 
-export function GenericPage<T extends PropsX>({ queryKey, fetchFunction, path }: Props<T>) {
+export function GenericPage<T extends ResponseResult>({ queryKey, fetchFunction, path }: Props<T>) {
   const [page, setPage] = useState(1);
   const { data, isLoading, error } = useQuery([queryKey, page], () => fetchFunction(page), {});
 

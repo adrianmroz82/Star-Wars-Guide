@@ -1,8 +1,7 @@
 import { EntityInfo } from "../EntityInfo/EntityInfo";
-import { Path } from "../../models/path.model";
+import { Entity, Path } from "../../models/shared.model";
 
 import classes from "./EntityDetails.module.scss";
-import { Entity } from "../../models/entity.model";
 
 interface Props {
   id: string;

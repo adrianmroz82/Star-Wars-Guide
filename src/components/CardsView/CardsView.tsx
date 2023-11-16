@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Entity } from "../../models/entity.model";
-import { Path } from "../../models/path.model";
+import { Entity, Path } from "../../models/shared.model";
 import { extractRouteId } from "../../utils/extractRouteId";
 import { Card } from "../Card/Card";
 import { Pagination } from "../Pagination/Pagination";

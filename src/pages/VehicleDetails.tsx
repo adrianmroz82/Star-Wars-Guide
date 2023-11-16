@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { ConnectedEntityQuery } from "../components/ConnectedEntity/ConnectedEntityQuery";
 import { Character } from "../models/character.model";
 import EntityDetails from "../components/EntityDetails/EntityDetails";
-import { Path } from "../models/path.model";
+import { Path } from "../models/shared.model";
 import { extractPathParam } from "../utils/extractPathParam";
 import { Spinner } from "../components/Spinner/Spinner";
 import { ErrorPage } from "./ErrorPage";

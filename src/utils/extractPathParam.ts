@@ -1,4 +1,4 @@
-import { Path } from "../models/path.model";
+import { Path } from "../models/shared.model";
 
 export function extractPathParam(path: Path) {
   const pathArray = path.split("/");

@@ -1,4 +1,4 @@
-import { Path } from "../../models/path.model";
+import { Path } from "../../models/shared.model";
 
 import classes from "./EntityAsset.module.scss";
 

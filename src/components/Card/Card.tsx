@@ -3,7 +3,7 @@ import { EntityAsset } from "../EntityAsset/EntityAsset";
 import { Character } from "../../models/character.model";
 import { Vehicle } from "../../models/vehicle.model";
 import { Homeworld } from "../../models/homeworld.model";
-import { Path } from "../../models/path.model";
+import { Path } from "../../models/shared.model";
 
 import classes from "./Card.module.scss";
 

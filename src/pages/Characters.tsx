@@ -1,14 +1,7 @@
-import { Character } from "../models/character.model";
 import { GenericPage } from "../components/GenericPage/GenericPage";
 import { fetchCharactersByPage } from "../api/character.api";
-
-interface Props {
-  results: Character[];
-  next: string | null;
-  previous: string | null;
-  count: number;
-}
+import { ResponseResult } from "../models/shared.model";
 
 export function Characters() {
-  return <GenericPage<Props> queryKey="characters" fetchFunction={fetchCharactersByPage} path="people" />;
+  return <GenericPage<ResponseResult> queryKey="characters" fetchFunction={fetchCharactersByPage} path="people" />;
 }
