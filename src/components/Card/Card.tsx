@@ -22,7 +22,7 @@ export function Card({ data, index, path }: Props) {
     <Link to={`/${path}/${index}`} className={classes.card}>
       <div className={classes.cardContainer}>
         <div className={classes.imageContainer}>
-          <EntityAsset path={path} index={index} />
+          <EntityAsset path={path} index={index} border={true} />
         </div>
         <div className={classes.textContainer}>
           {entityData.map((entity) => (
