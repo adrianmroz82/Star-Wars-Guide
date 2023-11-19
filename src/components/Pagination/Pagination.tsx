@@ -1,7 +1,7 @@
 import { Dispatch } from "react";
+import { ResponseResult } from "../../models/shared.model";
 
 import classes from "./Pagination.module.scss";
-import { ResponseResult } from "../../models/shared.model";
 
 interface Props {
   data: ResponseResult;
