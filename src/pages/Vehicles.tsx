@@ -1,7 +1,7 @@
-import { fetchVehicles } from "../api/vehicle.api";
+import { fetchVehiclesByPage } from "../api/vehicle.api";
 import { GenericPage } from "../components/GenericPage/GenericPage";
-import { Vehicle } from "../models/vehicle.model";
+import { ResponseResult } from "../models/shared.model";
 
 export function Vehicles() {
-  return <GenericPage<Vehicle[]> queryKey="vehicles" fetchFunction={fetchVehicles} path="vehicles" />;
+  return <GenericPage<ResponseResult> queryKey="vehicles" fetchFunction={fetchVehiclesByPage} path="vehicles" />;
 }

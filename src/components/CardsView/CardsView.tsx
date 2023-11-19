@@ -1,23 +1,29 @@
-import { Entity } from "../../models/entity.model";
-import { Path } from "../../models/path.model";
+import { Dispatch, SetStateAction } from "react";
+import { Path, ResponseResult } from "../../models/shared.model";
 import { extractRouteId } from "../../utils/extractRouteId";
 import { Card } from "../Card/Card";
+import { Pagination } from "../Pagination/Pagination";
 
 import classes from "./CardsView.module.scss";
 
 interface Props {
-  data: Entity[];
+  data: ResponseResult;
   path: Path;
+  page: number;
+  setPage: Dispatch<SetStateAction<number>>;
 }
 
-export const CardsView = ({ data, path }: Props) => {
-  const id = extractRouteId(data);
+export const CardsView = ({ data, path, page, setPage }: Props) => {
+  const id = extractRouteId(data.results);
 
   return (
-    <div className={classes.cardsView} data-testid="cardsView">
-      {data.map((el, index) => (
-        <Card path={path} key={index} data={el} index={id[index]} />
-      ))}
-    </div>
+    <>
+      <Pagination data={data} page={page} setPage={setPage} />
+      <div className={classes.cardsView} data-testid="cardsView">
+        {data.results.map((el, index) => (
+          <Card path={path} key={index} data={el} index={id[index]} />
+        ))}
+      </div>
+    </>
   );
 };

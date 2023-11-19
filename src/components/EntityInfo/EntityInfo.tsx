@@ -1,7 +1,6 @@
 import { Character } from "../../models/character.model";
-import { Entity } from "../../models/entity.model";
 import { Homeworld } from "../../models/homeworld.model";
-import { Path } from "../../models/path.model";
+import { Entity, Path } from "../../models/shared.model";
 import { Vehicle } from "../../models/vehicle.model";
 import { EntityAsset } from "../EntityAsset/EntityAsset";
 

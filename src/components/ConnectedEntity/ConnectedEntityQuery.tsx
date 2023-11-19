@@ -3,7 +3,7 @@ import { ConnectedEntityView } from "./ConnectedEntityView";
 import { Character } from "../../models/character.model";
 import { Homeworld } from "../../models/homeworld.model";
 import { Vehicle } from "../../models/vehicle.model";
-import { Path } from "../../models/path.model";
+import { Path } from "../../models/shared.model";
 
 type Urls = string | string[];
 interface Props<T> {

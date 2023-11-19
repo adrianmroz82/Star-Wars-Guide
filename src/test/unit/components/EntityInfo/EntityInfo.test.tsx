@@ -37,8 +37,8 @@ describe("EntityInfo", () => {
 
     // then
     expect(getByText("X-wing")).toBeInTheDocument();
-    expect(getByText("Vehicle Property 1: X-wing")).toBeInTheDocument();
-    expect(getByText("Vehicle Property 2: T-65 X-wing starfighter")).toBeInTheDocument();
+    expect(getByText("Name: X-wing")).toBeInTheDocument();
+    expect(getByText("Model: T-65 X-wing starfighter")).toBeInTheDocument();
   });
 
   it("should render a planet entity information", () => {

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: Starjhol;
+  src: url(../../assets/fonts/Starjhol.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.headerContainer {
+  text-align: center;
+
+  h1 {
+    font-size: 5rem;
+    color: rgb(255, 213, 0);
+    font-family: Starjhol;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-family: Starjhol;
+  }
+}

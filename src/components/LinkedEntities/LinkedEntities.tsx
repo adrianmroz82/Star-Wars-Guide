@@ -19,18 +19,18 @@ export const LinkedEntities = () => {
   return (
     <div className={classes.linkedEntities}>
       <ul>
-        <li>
+        <li data-testid="people-link">
           <Link to="/" className={activeLink(["/"])}>
             People
           </Link>
         </li>
-        <li>
+        <li data-testid="vehicles-link">
           <Link to="/vehicles" className={activeLink("/vehicles")}>
             Vehicles
           </Link>
         </li>
         <li>
-          <Link to="/planets" className={activeLink("/planets")}>
+          <Link data-testid="planets-link" to="/planets" className={activeLink("/planets")}>
             Planets
           </Link>
         </li>

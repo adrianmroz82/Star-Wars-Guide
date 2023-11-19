@@ -3,13 +3,12 @@ import { LinkedEntities } from "./components/LinkedEntities/LinkedEntities";
 import { AppRouter } from "./components/AppRouter";
 
 import classes from "./App.module.scss";
+import { AppHeader } from "./components/AppHeader/AppHeader";
 
 export function App() {
   return (
     <>
-      <header className={classes.header}>
-        <h1>Star Wars Characters</h1>
-      </header>
+      <AppHeader />
       <div className={classes.container}>
         <Router>
           <div className={classes.sidebar}>

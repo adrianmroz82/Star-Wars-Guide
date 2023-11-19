@@ -1,7 +1,7 @@
-import { Character } from "../models/character.model";
 import { GenericPage } from "../components/GenericPage/GenericPage";
-import { fetchCharacters } from "../api/character.api";
+import { fetchCharactersByPage } from "../api/character.api";
+import { ResponseResult } from "../models/shared.model";
 
 export function Characters() {
-  return <GenericPage<Character[]> queryKey="characters" fetchFunction={fetchCharacters} path="people" />;
+  return <GenericPage<ResponseResult> queryKey="characters" fetchFunction={fetchCharactersByPage} path="people" />;
 }
