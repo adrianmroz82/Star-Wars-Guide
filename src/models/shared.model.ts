@@ -7,7 +7,6 @@ export type Entity = Character | Vehicle | Homeworld;
 
 export interface ResponseResult {
   results: Entity[];
-  // results: T[]; ???
   next: string | null;
   previous: string | null;
   count: number;

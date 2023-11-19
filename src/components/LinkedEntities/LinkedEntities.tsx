@@ -16,8 +16,6 @@ export const LinkedEntities = () => {
     return `${classes["linkedEntity"]} ${isActive(path) ? classes["activeLink"] : ""}`;
   }
 
-  // todo: align data-testid
-
   return (
     <div className={classes.linkedEntities}>
       <ul>
