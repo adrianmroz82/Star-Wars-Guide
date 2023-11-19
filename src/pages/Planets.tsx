@@ -1,8 +1,7 @@
-import { fetchHomeworlds } from "../api/homeworld.api";
-
+import { fetchHomeworldsByPage } from "../api/homeworld.api";
 import { GenericPage } from "../components/GenericPage/GenericPage";
-import { Homeworld } from "../models/homeworld.model";
+import { ResponseResult } from "../models/shared.model";
 
 export function Planets() {
-  return <GenericPage<Homeworld[]> queryKey="planets" fetchFunction={fetchHomeworlds} path="planets" />;
+  return <GenericPage<ResponseResult> queryKey="planets" fetchFunction={fetchHomeworldsByPage} path="planets" />;
 }
