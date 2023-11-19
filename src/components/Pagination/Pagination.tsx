@@ -1,23 +1,17 @@
 import { Dispatch } from "react";
-import { Entity } from "../../models/entity.model";
 
 import classes from "./Pagination.module.scss";
-
-interface ResultType {
-  results: Entity[];
-  next: string | null;
-  previous: string | null;
-  count: number;
-}
+import { ResponseResult } from "../../models/shared.model";
 
 interface Props {
-  data: ResultType;
+  data: ResponseResult;
   page: number;
   setPage: Dispatch<React.SetStateAction<number>>;
 }
 
 export function Pagination({ data, page, setPage }: Props) {
-  const totalPages = Math.ceil(data.count / data.results.length);
+  const ITEMS_PER_PAGE = 10;
+  const totalPages = Math.ceil(data.count / ITEMS_PER_PAGE);
 
   const handlePageChange = async (page: number) => {
     setPage(page);

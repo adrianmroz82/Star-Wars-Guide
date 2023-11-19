@@ -1,20 +1,13 @@
 import { Dispatch, SetStateAction } from "react";
-import { Entity, Path } from "../../models/shared.model";
+import { Path, ResponseResult } from "../../models/shared.model";
 import { extractRouteId } from "../../utils/extractRouteId";
 import { Card } from "../Card/Card";
 import { Pagination } from "../Pagination/Pagination";
 
 import classes from "./CardsView.module.scss";
 
-interface PropsX {
-  results: Entity[];
-  next: string | null;
-  previous: string | null;
-  count: number;
-}
-
 interface Props {
-  data: PropsX;
+  data: ResponseResult;
   path: Path;
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
