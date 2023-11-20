@@ -20,7 +20,7 @@ export const LinkedEntities = () => {
     <div className={classes.linkedEntities}>
       <ul>
         <li data-testid="people-link">
-          <Link to="/" className={activeLink(["/"])}>
+          <Link to="/people" className={activeLink(["/people"])}>
             People
           </Link>
         </li>
