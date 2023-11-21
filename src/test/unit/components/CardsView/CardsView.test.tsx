@@ -17,7 +17,7 @@ describe("CardsView", () => {
 
     // when
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { getAllByTestId } = render(<CardsView data={entity as any} path="people" />);    
+    const { getAllByTestId } = render(<CardsView page={1} setPage={() => {}} data={entity as any} path="people" />);
     const cards = getAllByTestId("cardsView");
 
     // then
