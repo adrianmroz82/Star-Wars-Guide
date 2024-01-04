@@ -1,4 +1,4 @@
-import { Entity } from "../models/entity.model";
+import { Entity } from "../models/shared.model";
 
 export function extractRouteId(data: Entity | Entity[]) {
   if (Array.isArray(data)) {

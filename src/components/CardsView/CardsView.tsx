@@ -21,7 +21,7 @@ export const CardsView = ({ data, path, page, setPage }: Props) => {
       <Pagination data={data} page={page} setPage={setPage} />
       <div className={classes.cardsView} data-testid="cardsView">
         {data.results.map((el, index) => (
-          <Card path={path} key={index} data={el} index={id[index]} />
+          <Card path={path} key={index} data={el} index={id[index] as unknown as number} />
         ))}
       </div>
     </>

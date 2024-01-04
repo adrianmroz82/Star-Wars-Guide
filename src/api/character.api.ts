@@ -2,12 +2,12 @@ import axios from "axios";
 import { Character } from "../models/character.model";
 import { httpService } from "./utils";
 
-export const fetchCharacter = async (id: string) => {
+export const fetchCharacter = async (id: string): Promise<Character> => {
   const response = await httpService.get(`/people/${parseInt(id)}`);
   return response.data as Character;
 };
 
-export const fetchConnectedCharacters = async (characterUrls: string[]) => {
+export const fetchConnectedCharacters = async (characterUrls: string[]): Promise<Character[]> => {
   const responseArray = await Promise.all(characterUrls.map((url) => axios.get(url)));
   return responseArray.map((response) => response.data) as Character[];
 };
