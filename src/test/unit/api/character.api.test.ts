@@ -1,5 +1,4 @@
 import { fetchCharacter, fetchCharactersByPage, fetchConnectedCharacters } from "../../../api/character.api";
-import { Character } from "../../../models/character.model";
 import { httpService } from "../../../api/utils";
 import { characterMock, paginatedCharactersMock } from "./sharedMocks";
 
@@ -30,14 +29,13 @@ describe("fetchCharacter", () => {
   it("should fetch an array of characters by their URLs", async () => {
     // given
     const characterUrls = ["https://swapi.dev/api/people/11/"];
-    const characterDataArray: Character[] = [characterMock];
 
     // when
-    (httpService.get as jest.Mock).mockResolvedValueOnce({ data: characterDataArray[0] });
+    (httpService.get as jest.Mock).mockResolvedValueOnce({ data: characterMock });
     const result = await fetchConnectedCharacters(characterUrls);
 
     // then
-    expect(result).toEqual(characterDataArray);
+    expect(result).toEqual([characterMock]);
   });
 
   it("should fetch characters based on page number", async () => {

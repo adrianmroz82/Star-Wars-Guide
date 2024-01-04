@@ -8,7 +8,7 @@ jest.mock("../../../api/utils", () => ({
   },
 }));
 
-describe("fetchCharacter", () => {
+describe("fetchHomeworld", () => {
   afterEach(() => {
     jest.resetAllMocks();
   });
@@ -29,7 +29,6 @@ describe("fetchCharacter", () => {
   it("should fetch a connected planet by its URL", async () => {
     // given
     const homeworldUrl = "https://swapi.dev/api/planets/1/";
-    // const characterDataArray: Homeworld = homeworldMock
 
     // when
     (httpService.get as jest.Mock).mockResolvedValueOnce({ data: homeworldMock });
